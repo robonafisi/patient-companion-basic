@@ -58,7 +58,7 @@ const Conversation = ({
         left={"50%"}
         transform={"translate(-50%, -50%)"}
       >
-        <Box boxSize={75}>
+      <Box boxSize={75}>
           <MicrophoneIcon color={"#ddfafa"} muted={status !== "connected"} />
         </Box>
       </Button>

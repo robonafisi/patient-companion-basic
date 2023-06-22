@@ -2,26 +2,26 @@ import "@fontsource/inter";
 import "./App.css";
 
 import {
-  // Box,
+  Box,
   ChakraProvider,
-  // Flex,
-  // Spacer,
-  // Text,
-  // VStack,
+  Flex,
+  Spacer,
+  Text,
+  VStack,
 } from "@chakra-ui/react";
 import Conversation from "./components/Conversation";
 
-// import { isChrome, isMobile, isSafari } from "react-device-detect";
-// import { WarningIcon } from "@chakra-ui/icons";
+import { isChrome, isMobile, isSafari } from "react-device-detect";
+import { WarningIcon } from "@chakra-ui/icons";
 import {
   DeepgramTranscriberConfig,
-  // LLMAgentConfig,
+  LLMAgentConfig,
   AzureSynthesizerConfig,
   VocodeConfig,
-  // EchoAgentConfig,
+  EchoAgentConfig,
   ChatGPTAgentConfig,
-  // RESTfulUserImplementedAgentConfig,
-  // WebSocketUserImplementedAgentConfig,
+  RESTfulUserImplementedAgentConfig,
+  WebSocketUserImplementedAgentConfig,
 } from "vocode";
 
 const App = () => {
@@ -39,7 +39,7 @@ const App = () => {
     type: "agent_chat_gpt",
     initialMessage: { type: "message_base", text: "Hey there! I'm Peter, your friendly companion. I can help you successfully complete your treatment. What is your name?" },
     promptPreamble:
-      "You are a friendly and credible companion helping a patient complete their treatment. Please provide engaging but concise responses and ask them specific questions about their lifestyle and how they feel. They will tell you their name. Start everything you say by referencing their name. Then ask when you can checkup with them.",
+      "You are a friendly and credible companion helping a patient complete their treatment. Please provide engaging but concise responses and ask them specific questions about their lifestyle and how they feel. They will tell you their name. Start everything you say by referencing their name.",
     endConversationOnGoodbye: true,
     generateResponses: true,
     cutOffResponse: {},
@@ -58,7 +58,7 @@ const App = () => {
 
   return (
     <ChakraProvider>
-      {/* {(isMobile || !isChrome) && !isSafari ? (
+      {(isMobile || !isChrome) && !isSafari ? (
         <VStack padding={10} alignItems="center">
           <WarningIcon boxSize={100} />
           <Text paddingTop={4}>
@@ -75,16 +75,7 @@ const App = () => {
             vocodeConfig,
           }}
         />
-      )} */}
-
-      <Conversation
-          config={{
-            transcriberConfig,
-            agentConfig,
-            synthesizerConfig,
-            vocodeConfig,
-          }}
-        />
+      )}
     </ChakraProvider>
   );
 };
