@@ -2,26 +2,26 @@ import "@fontsource/inter";
 import "./App.css";
 
 import {
-  Box,
+  // Box,
   ChakraProvider,
-  Flex,
-  Spacer,
-  Text,
-  VStack,
+  // Flex,
+  // Spacer,
+  // Text,
+  // VStack,
 } from "@chakra-ui/react";
 import Conversation from "./components/Conversation";
 
-import { isChrome, isMobile, isSafari } from "react-device-detect";
-import { WarningIcon } from "@chakra-ui/icons";
+// import { isChrome, isMobile, isSafari } from "react-device-detect";
+// import { WarningIcon } from "@chakra-ui/icons";
 import {
   DeepgramTranscriberConfig,
-  LLMAgentConfig,
+  // LLMAgentConfig,
   AzureSynthesizerConfig,
   VocodeConfig,
-  EchoAgentConfig,
+  // EchoAgentConfig,
   ChatGPTAgentConfig,
-  RESTfulUserImplementedAgentConfig,
-  WebSocketUserImplementedAgentConfig,
+  // RESTfulUserImplementedAgentConfig,
+  // WebSocketUserImplementedAgentConfig,
 } from "vocode";
 
 const App = () => {
@@ -58,7 +58,7 @@ const App = () => {
 
   return (
     <ChakraProvider>
-      {(isMobile || !isChrome) && !isSafari ? (
+      {/* {(isMobile || !isChrome) && !isSafari ? (
         <VStack padding={10} alignItems="center">
           <WarningIcon boxSize={100} />
           <Text paddingTop={4}>
@@ -75,7 +75,16 @@ const App = () => {
             vocodeConfig,
           }}
         />
-      )}
+      )} */}
+
+      <Conversation
+          config={{
+            transcriberConfig,
+            agentConfig,
+            synthesizerConfig,
+            vocodeConfig,
+          }}
+        />
     </ChakraProvider>
   );
 };
