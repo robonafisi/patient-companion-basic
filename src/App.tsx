@@ -37,9 +37,9 @@ const App = () => {
   };
   const agentConfig: ChatGPTAgentConfig = {
     type: "agent_chat_gpt",
-    initialMessage: { type: "message_base", text: "Hello!" },
+    initialMessage: { type: "message_base", text: "Hey there! I'm Peter, your friendly companion. I can help you successfully complete your treatment. What is your name?" },
     promptPreamble:
-      "Vocode is an SDK that allows developers to create voice bots like this one in less than 10 lines of code. The AI is explaining to the human what Vocode is.",
+      "You are a friendly and credible companion helping a patient complete their treatment. Please provide engaging but concise responses and ask them specific questions about their lifestyle and how they feel. They will tell you their name. Start everything you say by referencing their name. Then ask when you can checkup with them.",
     endConversationOnGoodbye: true,
     generateResponses: true,
     cutOffResponse: {},
